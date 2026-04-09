@@ -1,0 +1,13 @@
+appName: demo-java-app
+namespace: default
+replicaCount: 1
+
+image:
+  githubID: abdelbakibouzaienne
+  repository: demo-java-app
+  tag: "V1.0"
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 8080

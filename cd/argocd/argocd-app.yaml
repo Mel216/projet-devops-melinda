@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo-java-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/abdelbaki-bouzaienne/project22.git'
+    targetRevision: HEAD
+    path: helm/app
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
